@@ -1,27 +1,21 @@
 {
-	"name": "helloworld-sample",
-	"displayName": "helloworld-sample",
-	"description": "HelloWorld example for VS Code",
+	"name": "art-book",
+	"displayName": "Art Book",
+	"description": "Notebook style interface for working with Processing.py images.",
 	"version": "0.0.1",
-	"publisher": "vscode-samples",
-	"repository": "https://github.com/Microsoft/vscode-extension-samples/helloworld-sample",
+	"publisher": "Ian Matthew Huff",
+	"repository": "https://github.com/IanMatthewHuff/art-book",
 	"engines": {
 		"vscode": "^1.32.0"
 	},
 	"categories": [
-		"Other"
+		"Other",
+		"Notebooks"
 	],
-	"activationEvents": [
-		"onCommand:extension.helloWorld"
-	],
+	"activationEvents": [],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
-			}
-		]
+		"commands": []
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

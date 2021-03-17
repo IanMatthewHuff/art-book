@@ -3,19 +3,39 @@
 	"displayName": "Art Book",
 	"description": "Notebook style interface for working with Processing.py images.",
 	"version": "0.0.1",
+	"enableProposedApi": "true",
 	"publisher": "Ian Matthew Huff",
 	"repository": "https://github.com/IanMatthewHuff/art-book",
 	"engines": {
-		"vscode": "^1.32.0"
+		"vscode": "^1.54.0"
 	},
 	"categories": [
 		"Other",
 		"Notebooks"
 	],
-	"activationEvents": [],
+	"activationEvents": [
+		"onCommand:extension.helloWorld",
+		"onNotebook:art-book-provider"
+	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": []
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			}
+		],
+		"notebookProvider": [
+			{
+				"viewType": "art-book-provider",
+				"displayName": "Art-Book Provider",
+				"selector": [
+					{
+						"filenamePattern": "*.art-book"
+					}
+				]
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -29,7 +49,7 @@
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.6",
 		"@types/node": "^12.12.0",
-		"@types/vscode": "^1.32.0",
+		"@types/vscode": "^1.54.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
 		"source-map-support": "^0.5.12",

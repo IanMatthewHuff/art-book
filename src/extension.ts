@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { ArtBookProvider } from "./ContentProvider/artBookProvider";
+import { ArtBookKernelProvider } from './NotebookKernel/artBookKernelProvider';
 
 export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
@@ -11,9 +12,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(
 		vscode.notebook.registerNotebookContentProvider(
-			'art-book-provider',
+			'art-book',
 			new ArtBookProvider()
 		)
+	);
+
+	context.subscriptions.push(
+		vscode.notebook.registerNotebookKernelProvider({ viewType: 'art-book'}, new ArtBookKernelProvider())
 	);
 
 	context.subscriptions.push(disposable);

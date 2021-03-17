@@ -15,7 +15,7 @@
 	],
 	"activationEvents": [
 		"onCommand:extension.helloWorld",
-		"onNotebook:art-book-provider"
+		"onNotebook:art-book"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -27,8 +27,8 @@
 		],
 		"notebookProvider": [
 			{
-				"viewType": "art-book-provider",
-				"displayName": "Art-Book Provider",
+				"viewType": "art-book",
+				"displayName": "Art-Book",
 				"selector": [
 					{
 						"filenamePattern": "*.art-book"
